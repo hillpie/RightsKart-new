@@ -1,3 +1,33 @@
+// document.querySelector('#center')
+// .addEventListener("mousemove", function(dets){
+//     console.log(dets.clientX, dets.clientY);
+// })
+
+// Throttling Function
+const btn=document.querySelector("#throttle");
+const throttleFunction=(func, delay)=>{
+  let prev = 0;
+  return (...args) => {
+    let now = new Date().getTime();
+    if(now - prev> delay){
+      prev = now;
+      return func(...args); 
+    }
+  }
+}
+document.querySelector("#center")
+.addEventListener("mousemove", throttleFunction((dets)=>{
+    var div = document.createElement("div");
+    div.classList.add('imagediv');
+    div.style.left = dets.clientX;
+    div.style.top = dets.clientY;
+    document.body.appendChild(div);
+}, 1500));
+
+
+
+
+
 var crsr = document.querySelector("#cursor")
 var blur = document.querySelector("#cursor-blur")
 
@@ -49,18 +79,18 @@ gsap.to("#main",{
     }
 })
 
-gsap.from(".card",{
-    scale:0.8,
-    opacity:0,
-    duration:0.5,
-    scrollTrigger:{
-        trigger:".card",
-        scroller:"body",
-        start:"top 70%",
-        end:"top 65%",
-        scrub:1
-    }
-})
+// gsap.from(".card",{
+//     scale:0.8,
+//     opacity:0,
+//     duration:0.5,
+//     scrollTrigger:{
+//         trigger:".card",
+//         scroller:"body",
+//         start:"top 70%",
+//         end:"top 65%",
+//         scrub:1
+//     }
+// })
 
 gsap.from("#colon1",{
     y:-70,
@@ -96,3 +126,5 @@ gsap.from("#page4 h1",{
     }
 
 })
+
+
