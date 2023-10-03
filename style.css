@@ -70,6 +70,9 @@ html, body{
     text-transform: uppercase;
     font-weight: 500;
 }
+#nav a{
+    text-decoration: none;
+}
 
 /* Landing-page */
 video{
@@ -242,13 +245,30 @@ video{
     margin-top: 8rem;
     position: relative;
     z-index: 10;
-    margin-left: 300px;
     
+}
+.head-img{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    text-align: center;
+    
+}
+.head-img img{
+    height: 70%;
+    width: 70%;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+.head-img h1{
+    margin-right: 110px;
+    font-size: 60px;
 }
 
 #about-us-in{
     width: 50%;
     text-align: left;
+    margin-top: 60px;
 }
 
 #about-us-in h3{
@@ -388,7 +408,7 @@ video{
     justify-content: center;
     gap: 70px;
     position: relative;
-    margin-top: 4.5rem;
+    margin-top: 150px;
 }
 .elem{
     height: 60%;
